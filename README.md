@@ -6,6 +6,9 @@ Il faut savoir que le projet a été lancé pour palier à un besoin, celui d'un
 
 Vous pouvez le faire sur telegram via mon groupe : https://t.me/joinchat/Sd0m11kiWnuIqk7l ou bien en pv ;)
 
+# A propos de ce dépôt
+Il contient les dernières release stables de Azura, si vous souhaitez obtenir les dernières nouveautées du code, nous vous invitons à consulter les dépôts : Azura-build-community ou bien Azura-in-python.
+
 # Remerciements (section à améliorer : contributeurs manquants ).
 
 Lomig & Tux pour l'apport de ses connaissances au projet .
