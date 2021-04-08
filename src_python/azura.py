@@ -3,6 +3,14 @@
 import os
 import sys  
 yes = "yes"
+
+def help():
+    print("Hi")
+    print("Pour mettre àjour votre os : sudo azura update ")
+    print("Pour installer un paquet : sudo azura install ")
+    print("Pour désistaller des paquets : sudo azura remove ")
+    print("Pour compile un pkgfile : sudo azura compile ")
+
 # Fonction principale, build le pkgfile
 def compile():
   print("Hello world")
@@ -25,7 +33,12 @@ def install():
     print("Nous syncronisons les dépôts de votre os ... please wait ") 
     os.system("sudo cards sync")
     package =input("Donnez nous du package à installer : ")
-    os.system("sudo cards install " + package)
+    flatpak =input("Ces paquets sont-ils des flatpaks ? : ")
+    if flatpak == yes :
+        os.system("flatpak update")
+        os.system("flatpak install " + package )
+    if flatpak != yes :
+        os.system("sudo cards install " + package )
     print("Nous procédons à un nettoyage des archives binaires")
     os.system("sudo cards purge")
     print("Done")
@@ -35,7 +48,7 @@ def update():
     print("Nous mettons votre système à jour")
     os.system("sudo cards sync")
     os.system("sudo cards upgrade")
-    ask =input("yes or no : ")
+    ask =input("Des mises à jour de flatpak sont peut-être dispo, voulez-vous les effectuer ? [yes ou no] : ")
     if ask == yes :
         os.system("flatpak update")
     if ask != yes:
@@ -48,8 +61,9 @@ def update():
 # Comming soon
 def remove ():
     rem =input("Quel paquet voulez vous supprimer : ")
-    rep =input("Savez vous dans quel collection  il se trouve ?")
+    os.system("sudo cards remove " + rem ) 
     os.system("sudo cards purge")
+
 
 #  Les arguments
 if sys.argv[1] == "update":
@@ -63,3 +77,6 @@ if sys.argv[1] == "install":
 
 if sys.argv[1] == "remove":
     remove()
+
+if sys.argv[1] == "help":
+    help() 
