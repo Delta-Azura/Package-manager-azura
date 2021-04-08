@@ -52,7 +52,7 @@ def update():
     if ask == yes :
         os.system("flatpak update")
     if ask != yes:
-        print("Done"
+        print("Done")
         exit()
 
     print("Nous nettoyons les archives binaires")
