@@ -6,7 +6,7 @@ yes = "yes"
 
 def help():
     print("Hi")
-    print("Pour mettre àjour votre os : sudo azura update ")
+    print("Pour mettre à jour votre os : sudo azura update ")
     print("Pour installer un paquet : sudo azura install ")
     print("Pour désistaller des paquets : sudo azura remove ")
     print("Pour compile un pkgfile : sudo azura compile ")
@@ -33,7 +33,7 @@ def install():
     print("Nous syncronisons les dépôts de votre os ... please wait ") 
     os.system("sudo cards sync")
     package =input("Donnez nous du package à installer : ")
-    flatpak =input("Ces paquets sont-ils des flatpaks ? : ")
+    flatpak =input("Ces paquets sont-ils des flatpaks ? [yes ou no] : ")
     if flatpak == yes :
         os.system("flatpak update")
         os.system("flatpak install " + package )
@@ -52,6 +52,7 @@ def update():
     if ask == yes :
         os.system("flatpak update")
     if ask != yes:
+        print("Done"
         exit()
 
     print("Nous nettoyons les archives binaires")
@@ -61,7 +62,11 @@ def update():
 # Comming soon
 def remove ():
     rem =input("Quel paquet voulez vous supprimer : ")
-    os.system("sudo cards remove " + rem ) 
+    flatpak_remove =input("Ce paquet est il un flatapk ? [yes ou no]  : ")
+    if yes == yes :
+        os.system("flatpak remove " + rem )
+    if yes != yes : 
+        os.system("sudo cards remove " + rem)
     os.system("sudo cards purge")
 
 
