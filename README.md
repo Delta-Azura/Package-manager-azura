@@ -9,9 +9,10 @@ Vous pouvez le faire sur telegram via mon groupe : https://t.me/joinchat/Sd0m11k
 # A propos de ce dépôt
 Il contient les dernières release stables de Azura. Si vous voulez retrouver la version minimale en SHELL (pour ceux qui ont connus cette version), elle est disponible sur le dépôt community. Enfin, si vous souhaitez obtenir les dernières nouveautées du code, nous vous invitons à consulter le dépôt : Azura-build-community.
 
-# Remerciements (section à améliorer : contributeurs manquants ).
+# Remerciements 
 
-Lomig & Tux pour l'apport de ses connaissances au projet .
-Tnut pour ses précieux conseils.
-Rems ou Rems28 pour sa patience qui a permis de donner naissance à Azura.
-Hugo qui avec Rems ont contribué grâce à leurs projets ont permis de faire avancer le developpement d'Azura.
+- Lomig & Tux pour l'apport de ses connaissances au projet .
+- Tnut pour ses précieux conseils.
+- Rems ou Rems28 pour sa patience qui a permis de donner naissance à Azura.
+- Hugo qui avec Rems ont contribué grâce à leurs projets ont permis de faire avancer le developpement d'Azura.
+- Freloop1642 qui a rejoint l'équipe et contribue activement au projet.
