@@ -7,8 +7,8 @@ import os
 yes = "yes"
 
 def main():
-    print("Félicitations, vous venez d'installer la distribution GNU/LINUX NuTyX !! ")
-    print("Avant d'aller plus loin, veuillez svp lire le prérequi : Tout d'abord veuillez vérifier que votre ordinateur est connecté à internet")
+    print("Félicitations, vous venez d'installer la version BASE de la distribution GNU/LINUX NuTyX !! ")
+    print("Avant d'aller plus loin, veuillez svp lire le prérequi : Veuillez vérifier que votre ordinateur est connecté à internet")
     yes_or_no = input("Alors ? [yes ou no ] : ")
     if yes == yes_or_no :
         print("Nous syncronisons les dépôts de votre os")
