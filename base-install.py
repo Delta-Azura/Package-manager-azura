@@ -9,9 +9,12 @@ def main():
     os.system("sudo cards install " + install )
     flatpak =input("Souhaitez vous installer les flatpaks ? : ")
     if flatpak == yes :
-        os.system("sudo cards install flatpak")
-        get_flatpak =input("Voulez vous installer des flatpaks ? : ")
-        os.system("flatpak install " + get_flatpak ) 
+        get_flatpak =input("Quels paquets voulez vous installer ? : ")
+        try :
+            os.system("flatpak install " + get_flatpak )
+        except :
+            os.system("sudo cards install flatpak")
+            os.system("flatpak install " + get_flatpak ) 
     if flatpak != yes : 
         print("Nous nettoyons les archives binaires")
         os.system("sudo cards purge")
