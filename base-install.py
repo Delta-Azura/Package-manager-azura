@@ -17,7 +17,7 @@ def main():
         os.system("sudo cards install " + install )
         flatpak =input("Souhaitez vous installer les flatpaks ? : ")
         if flatpak == yes :
-            get_flatpak =input("Quels paquets voulez vous installer ? : ")
+            get_flatpak =input("Quels paquets flatpaks voulez vous installer ? : ")
             try :
                 os.system("flatpak install " + get_flatpak )
             except :
