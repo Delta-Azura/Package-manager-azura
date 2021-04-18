@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-# test 
+# Attention, merci de ne pas utiliser azura en production 
 import os
 import sys  
 yes = "yes"
