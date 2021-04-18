@@ -1,6 +1,5 @@
 <<<<<<< HEAD
 # Azura
-test
 Azura est un package manager conçu pour la distribution GNU/Linux [NuTyx](https://nutyx.org) ayant pour vocation d'avoir un code simple à comprendre (écrit en Python), ce dans le but de simplifier les contribution ou de permettre a chacun de comprendre le fonctionnement de son géstionnaire de packet si il le désire. 
 =======
 # Package-manager-azura
