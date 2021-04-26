@@ -3,10 +3,11 @@
 # Azura in bash :
 function lock () {
 	if [[ -d /tmp/lock/azura/ ]];then
+		echo "azura est déjà lancé"
+		exit 
+	else
 		mkdir /tmp/lock/
 		mkdir /tmp/lock/azura/
-	else
-		exit
 	fi
 
 }
