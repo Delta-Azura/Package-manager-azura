@@ -2,18 +2,17 @@
 
 # Azura in bash :
 function lock () {
-	if [[ -d /tmp/lock/azura/ ]];then
+	if [[ -d /var/cache/azura ]];then
 		echo "azura est déjà lancé"
 		exit 
 	else
-		mkdir /tmp/lock/
-		mkdir /tmp/lock/azura/
+		sudo mkdir /var/cache/azura
 	fi
 
 }
 
 function unlock () {
-	rm -rf /tmp/lock/azura/
+	sudo rm -rf /var/cache/azura
 
 }
 
