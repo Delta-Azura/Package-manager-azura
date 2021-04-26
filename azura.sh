@@ -47,33 +47,24 @@ function update () {
 }
 
 function install () {
-    	if [[ $2 ]];then
-        	read -p "Le paquet est-il un flatpak, si oui veuillez préciser ? [o/n] : " flatpak_ask
-        	if [[ $flatpak_ask != "n" ]];then
-            	flatpak update
-            	flatpak install $flatpak_ask
-        	else
+    	read -p "Le paquet est-il un flatpak ? [o/n] : " flatpak_ask
+        if [[ $flatpak_ask != "n" ]];then
+		flatpak update
+           	flatpak install ${@}
+        else
             	sudo cards upgrade
-            	sudo cards install ${2}
+            	sudo cards install ${@}
             	sudo cards purge
-        	fi 
-	else
-		echo "utilisez un argument"
-	fi
+        fi
 }
 
 function remove () {
-    	if [[ $2 ]];then
-        	read -p "Ces paquets sont-ils des flatpak ? [o/n] : " flatpak_remove_ask
-        	if [[ $flatpak_remove_ask != "n" ]];then
-        		sudo cards remove $2
-        	else
-            		flatpak remove $2
-        	fi
-		sudo cards purge
+        read -p "Ces paquets sont-ils des flatpak ? [o/n] : " flatpak_remove_ask
+        if [[ $flatpak_remove_ask != "n" ]];then
+            	flatpak remove ${@}
 	else
-		echo "utiliser un argument"
-
+		sudo cards remove ${@}
+		sudo cards purge
 	fi
 }
 
