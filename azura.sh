@@ -88,17 +88,23 @@ function main () {
     	fi
 
     	if [[ $1 = "install" ]];then
+		lock
 		shift 
         	install ${@}
+		unlock
     	fi
 
     	if [[ $1 = "update" ]];then
+		lock
         	update
+		unlock
     	fi
 
     	if [[ $1 = "remove" ]];then
+		lock
 		shift
         	remove ${@}
+		unlock
     	fi
 }
 main "$@"
