@@ -1,6 +1,6 @@
 #! /bin/bash
 
-# Azura in bash :
+# Azura in bash, new :
 function lock () {
 	if [[ -d /var/cache/azura ]];then
 		echo "azura est déjà lancé, si vous pensez qu'il s'agit d'une erreur, supprimez /var/cache:azura"
