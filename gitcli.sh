@@ -22,7 +22,6 @@ function main() {
 
 		else
 			echo "ok"
-			git push origin $ask_3
 		fi
 
 		
