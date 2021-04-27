@@ -3,7 +3,7 @@
 # Azura in bash :
 function lock () {
 	if [[ -d /var/cache/azura ]];then
-		echo "azura est déjà lancé"
+		echo "azura est déjà lancé, si vous pensez qu'il s'agit d'une erreur, supprimez /var/cache:azura"
 		exit 
 	else
 		sudo mkdir /var/cache/azura
