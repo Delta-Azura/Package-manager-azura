@@ -21,6 +21,7 @@ function main() {
 			git push -u origin main
 
 		else
+			git push -u origin $ask_3
 			echo "ok"
 		fi
 
