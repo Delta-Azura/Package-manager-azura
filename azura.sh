@@ -59,10 +59,13 @@ function install () {
 }
 
 function remove () {
-	flatpak remove ${@}
+	flatpak remove ${@} >/dev/null 2>&1
 	if [[ $? != 0 ]];then
-		sudo cards remove ${@}
+		sudo cards remove ${@} >/dev/null 2>&1
 		sudo cards purge
+		echo "Done"
+	else
+		echo "Done"
 	fi
       
 }
