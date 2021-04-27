@@ -1,6 +1,6 @@
 #! /bin/bash
 
-# Azura in bash, new :
+# Azura in bash :
 function lock () {
 	if [[ -d /var/cache/azura ]];then
 		echo "azura est déjà lancé, si vous pensez qu'il s'agit d'une erreur, supprimez /var/cache:azura"
@@ -59,13 +59,12 @@ function install () {
 }
 
 function remove () {
-        read -p "Ces paquets sont-ils des flatpak ? [o/n] : " flatpak_remove_ask
-        if [[ $flatpak_remove_ask != "n" ]];then
-            	flatpak remove ${@}
-	else
+	flatpak remove ${@}
+	if [[ $? != 0 ]];then
 		sudo cards remove ${@}
 		sudo cards purge
 	fi
+      
 }
 
 function main () { 
