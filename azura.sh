@@ -40,7 +40,8 @@ function compile () {
 			echo "Une erreur est survenue "
 			exit
 		else
-			cp /usr/ports/azura/${@}/work
+			cd /usr/ports/azura/${@}/
+			mv work ${@}
 		fi
 		
 	else 
