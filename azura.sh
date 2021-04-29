@@ -43,9 +43,6 @@ function compile () {
 			cd /usr/ports/azura/${@} 
 			mv -rf work ${@}
 		fi
-	fi	
-
-
 		
 	else 
 		echo "Votre raincoat n'est pas placé au bon endroit"
