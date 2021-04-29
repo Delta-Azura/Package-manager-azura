@@ -9,6 +9,9 @@ function help () {
 	echo "azura update = met à jour : les flatpaks, le système et vos paquets"
 }
 
+function info () {
+	echo "Comming soon "# rajouter la description 
+}
 function lock () {
 	if [[ -d /var/cache/azura ]];then
 		echo "azura est déjà lancé, si vous pensez qu'il s'agit d'une erreur, supprimez /var/cache:azura"
@@ -34,7 +37,10 @@ function compile () {
 		cd /usr/ports/azura/${@}/work	
 		wget -c $source_compile
 		cd /usr/ports/azura/${@}/
-		description_paquet=${cat /usr/ports/azura/${@}/description/}
+		description_paquet=$(cat /usr/ports/azura/${@}/description/)
+		cd /usr/ports/azura/${@}/work/
+		touch description 
+		echo " ${description_paquet} " >> description
 		bash /usr/ports/azura/${@}/build
 		if [[ $? != 0 ]];then
 			echo "Une erreur est survenue "
