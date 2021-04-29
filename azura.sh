@@ -34,8 +34,8 @@ function compile () {
 		cd /usr/ports/azura/${@}/work	
 		wget -c $source_compile
 		cd /usr/ports/azura/${@}
-		build=$(cat /usr/ports/azura/${@}/build)
-		cd /usr/ports/azura/${@}/work/
+		cd /usr/ports/azura/${@}/work
+		bash /usr/ports/azura/${@}/build
 		${build}
 		
 	else 
