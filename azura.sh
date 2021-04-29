@@ -36,7 +36,16 @@ function compile () {
 		cd /usr/ports/azura/${@}
 		cd /usr/ports/azura/${@}/work
 		bash /usr/ports/azura/${@}/build
-		${build}
+		if [[ $? != 0 ]];then
+			echo "Une erreur est survenue "
+			exit
+		else
+			cd /usr/ports/azura/${@} 
+			mv -rf work ${@}
+		fi
+	fi	
+
+
 		
 	else 
 		echo "Votre raincoat n'est pas placé au bon endroit"
