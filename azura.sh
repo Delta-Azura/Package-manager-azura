@@ -1,6 +1,14 @@
 #! /bin/bash
 
 # Azura in bash :
+
+function help () {
+	echo "azura install = installe les paquets spécifiés"
+	echo "azura remove = supprime les paquets spécifiés"
+	echo "azura compile = compile un paquet depuis un raincoat"
+
+}
+
 function lock () {
 	if [[ -d /var/cache/azura ]];then
 		echo "azura est déjà lancé, si vous pensez qu'il s'agit d'une erreur, supprimez /var/cache:azura"
@@ -104,6 +112,11 @@ function main () {
         	remove ${@}
 		unlock
     	fi
+
+	if [[ $1 = "help" ]];then
+		help
+	fi
 }
+
 main "$@"
 
