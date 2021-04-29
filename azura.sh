@@ -17,18 +17,25 @@ function unlock () {
 }
 
 function compile () {
-        sudo cards upgrade && sudo cards install cards.devel
+        sudo cards upgrade
         echo "ok"
-       	cd /usr/ports/perso/${@}
-       	if [[ $? != 0 ]];then
-        	sudo mkdir /usr/ports/perso/
-            	echo "Nous venons de créer le répertoire /usr/ports/perso/, nous vous laissons mettre votre pkgfile dans un répertoire possédant le même nom que le paquet à compiler"
-        fi
-        sudo pkgmk -d 
-       	sudo pkgadd ${@}1*
-       	if [[ $? != 0 ]];then
-        	echo "Quelque chose c'est mal passé"
-        fi
+	if [[ -d /usr/ports/azura/${@} ]];then
+		cd /usr/ports/azura/${@}
+		source_compile=$(cat /usr/ports/azura/${@}/source )
+		sudo mkdir /usr/ports/azura/${@}/work
+		cd /usr/ports/azura/${@}/work	
+		wget -c $source_compile
+		cd /usr/ports/azura/${@}
+		build=$(cat /usr/ports/azura/${@}/build)
+		cd /usr/ports/azura/${@}/work/
+		${build}
+		
+	else 
+		echo "Votre raincoat n'est pas placé au bon endroit"
+		exit
+
+	fi
+
 
                 
 }
@@ -71,8 +78,7 @@ function remove () {
 }
 
 function main () { 
-
-    	if [[ $1 = "compile" ]];then
+	if [[ $1 = "compile" ]];then
 		lock
 		shift
 		compile ${@}
