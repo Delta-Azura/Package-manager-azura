@@ -6,7 +6,7 @@ function help () {
 	echo "azura install = installe les paquets spécifiés"
 	echo "azura remove = supprime les paquets spécifiés"
 	echo "azura compile = compile un paquet depuis un raincoat"
-
+	echo "azura update = met à jour : les flatpaks, le système et vos paquets"
 }
 
 function lock () {
