@@ -33,8 +33,8 @@ function compile () {
 		sudo mkdir /usr/ports/azura/${@}/work
 		cd /usr/ports/azura/${@}/work	
 		wget -c $source_compile
-		cd /usr/ports/azura/${@}
-		cd /usr/ports/azura/${@}/work
+		cd /usr/ports/azura/${@}/
+		description_paquet=${cat /usr/ports/azura/${@}/description/}
 		bash /usr/ports/azura/${@}/build
 		if [[ $? != 0 ]];then
 			echo "Une erreur est survenue "
