@@ -50,6 +50,7 @@ function compile () {
 		else
 			cd /usr/ports/azura/${@}/
 			mv work ${@}
+			cp ${@} /usr/binaires/azura/
 		fi
 		
 	else 
