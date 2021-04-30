@@ -11,8 +11,10 @@ function help () {
 
 function info () {
 	cd /usr/binaires/azura/${@}
-	description_info=$(cat /usr/binaires/azura/${@} ) 
-	echo ${description_info} # rajouter la description 
+	description_info=$(cat /usr/binaires/azura/${@}/description ) 
+	echo ${description_info}
+	release_number=$(cat /usr/binaires/azura/${@}/release)
+	echo ${release_number}
 }
 function lock () {
 	if [[ -d /var/cache/azura ]];then
