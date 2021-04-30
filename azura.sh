@@ -10,7 +10,9 @@ function help () {
 }
 
 function info () {
-	echo "Comming soon "# rajouter la description 
+	cd /usr/binaires/azura/${@}
+	description_info=$(cat /usr/binaires/azura/${@} ) 
+	echo ${description_info} # rajouter la description 
 }
 function lock () {
 	if [[ -d /var/cache/azura ]];then
