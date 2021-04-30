@@ -41,8 +41,11 @@ function compile () {
 		cd /usr/ports/azura/${@}/work	
 		wget -c $source_compile
 		cd /usr/ports/azura/${@}/
+		release_number=$(cat /usr/ports/azura/${@}/release)
 		description_paquet=$(cat /usr/ports/azura/${@}/description/)
 		cd /usr/ports/azura/${@}/work/
+		touch release 
+		echo " ${release_number} " >> release
 		touch description 
 		echo " ${description_paquet} " >> description
 		bash /usr/ports/azura/${@}/build
