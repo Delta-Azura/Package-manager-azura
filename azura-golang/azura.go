@@ -5,6 +5,17 @@ package main
 // les imports 
 import "fmt"
 import "os/exec"
+// need io/ioutil
+import "bufio"
+import "os"
+
+func lock() {
+	// comming soon 
+} 
+
+func unlock() {
+	// comming soon 
+}
 
 func main() {
 	fmt.Printf("Hello, world\n")
@@ -12,9 +23,20 @@ func main() {
 
 func install () {
 	main() 
+	reader := bufio.NewReader(os.Stdin)
+	fmt.Print("Quels paquets voulez-vous installer ? : ")
+	packageinstall, _ := reader.ReadString('\n')
 	fmt.Printf("coucou")
-	exec.Command("sudo cards sync")
+	exec.Command("sudo cards install ", packageinstall)
 	// rajouter arguement
+}
+
+func uninstall () {
+	reader := bufio.NewReader(os.Stdin)
+	fmt.Print("Quels paquets voulez-vous désinstaller ? : ")
+	packageuninstall, _ := reader.ReadString('\n')
+	exec.Command("sudo cards remove ", packageuninstall ) 
+	fmt.Printf("Done")
 }
 
 
