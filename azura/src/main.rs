@@ -29,3 +29,4 @@ fn main() {
     log();
     help();
 }
+
