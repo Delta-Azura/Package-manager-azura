@@ -3,11 +3,12 @@
 package main
 
 // les imports 
-import "fmt"
-import "os/exec"
-// need io/ioutil
-import "bufio"
-import "os"
+import (
+	"fmt"
+	"os/exec"
+	"bufio"
+	"os"
+)
 
 func lock() {
 	// comming soon 
